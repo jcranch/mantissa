@@ -1,0 +1,52 @@
+name:                Mantissa
+version:             0.1.0.0
+github:              "jcranch/mantissa"
+license:             BSD-3-Clause
+author:              "James Cranch"
+maintainer:          "cranch@cantab.net"
+copyright:           "2024 James Cranch"
+
+extra-source-files:
+- README.md
+- CHANGELOG.md
+
+# Metadata used when publishing your package
+synopsis:            Reals in the interval [0,1), as machine words
+category:            Numeric
+
+description:         Please see the README on GitHub at <https://github.com/jcranch/Mantissa#readme>
+
+dependencies:
+- base     >= 4.7  && < 5
+
+ghc-options:
+- -Wall
+- -Wcompat
+- -Widentities
+- -Wincomplete-record-updates
+- -Wincomplete-uni-patterns
+- -Wmissing-export-lists
+- -Wmissing-home-modules
+- -Wpartial-fields
+- -Wredundant-constraints
+
+library:
+  source-dirs: src
+
+tests:
+  Mantissa-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -Wall
+    - -Wcompat
+    - -Wincomplete-record-updates
+    - -Wincomplete-uni-patterns
+    - -Wredundant-constraints
+    - -Wwarn=missing-home-modules
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - Mantissa
+    - hspec        >= 2.7     && < 2.12
